@@ -18,3 +18,60 @@
     --background: #ffffff;
     --accent: rgba(255, 100, 50, 0.8);
 }
+
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+.header {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 32px;
+}
+
+.logo {
+    margin: 0 auto;
+    color: var(--primary-color1);
+    text-decoration: none;
+    max-width: 74px;
+    height: 42px;
+    text-align: left;
+    font-size: 24px;
+    color: var(--primary-color1);
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+ 
+}
+
+.header_menu {
+    /* display: inline-block; */
+    padding: 10.5px, 56px;
+    text-decoration: none;
+}
+
+.header_menu-list {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.header_menu-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--secondary-color2);
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0%;
+}
