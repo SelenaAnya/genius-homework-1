@@ -1,4 +1,4 @@
-*  {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,37 +28,46 @@ body {
 .container {
     max-width: 1240px;
     margin: 0 auto;
+    padding: 0 20px;
 }
+
+/* Header styles */
 .header {
-    display: inline-flex;
+    padding: 32px 0;
+    position: relative;
+    background: url('../img/hero.jpg') no-repeat center top;
+    background-size: cover;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.header .container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    text-decoration: none;
-    margin-top: 32px;
+    position: relative;
+    z-index: 1;
 }
 
 .logo {
-    margin: 0 auto;
     color: var(--primary-color1);
     text-decoration: none;
-    max-width: 74px;
-    height: 42px;
-    text-align: left;
     font-size: 24px;
-    color: var(--primary-color1);
     font-family: 'Play', sans-serif;
     font-weight: 700;
-    font-style: Bold;
     line-height: 28px;
-    letter-spacing: 0%;
     text-transform: capitalize;
- 
-}
-
-.header_menu {
-    /* display: inline-block; */
-    padding: 10.5px, 56px;
-    text-decoration: none;
 }
 
 .header_menu-list {
@@ -73,5 +82,349 @@ body {
     color: var(--secondary-color2);
     font-weight: 400;
     line-height: 19px;
-    letter-spacing: 0%;
+    position: relative;
+    padding-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+/* Варіант 1: Підкреслення при ховері з анімацією */
+.header_menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color1);
+    transition: width 0.3s ease;
+}
+
+.header_menu-link:hover::after {
+    width: 100%;
+}
+
+.header_menu-link:hover {
+    color: var(--primary-color1);
+}
+
+/* Варіант 2: Активна сторінка (додайте клас .active до потрібного пункту) */
+.header_menu-link.active::after {
+    width: 100%;
+}
+
+.header_menu-link.active {
+    color: var(--primary-color1);
+    font-weight: 600;
+}
+
+/* Social buttons */
+.btn {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.3s ease;
+}
+
+.btn a:hover {
+    opacity: 0.7;
+}
+
+.btn_tel_icon,
+.btn_fb_icon,
+.btn_instagram_icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Hero section */
+.hero-section {
+    background: url('../img/hero.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 120px 0;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%);
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section__subtitle {
+    font-size: 18px;
+    color: var(--secondary-color2);
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-style: regular;
+}
+
+.hero-section__title {
+    font-family: 'Play', sans-serif;
+    font-size: 140px;
+    font-weight: 700;
+    color: var(--primary-color1);
+    line-height: 1.2;
+    margin-bottom: 32px;
+}
+
+.hero_call {
+    max-width: 238px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 24px;
+}
+
+.btn-call {
+    background: var(--primary-color1);
+    color: var(--primary-color);
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    max-width: 219px;
+    height: 53px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-call:hover {
+    background: var(--primary-color2);
+}
+
+.hero_text {
+    max-width: 400px;
+    font-size: 12px;
+    color: var(--secondary-color2);
+    font-style: regular;
+    line-height: 18px;
+    align-items: center;
+}
+
+/* About section */
+.about {
+    padding: 80px 0;
+}
+
+.about_title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.about1 {
+    color: var(--primary-color1);
+    text-transform: capitalize;
+}
+
+.about_text1,
+.about_text2 {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    max-width: 800px;
+}
+
+.bolt {
+    font-weight: 700;
+}
+
+.about_img {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.about_img img {
+    width: 48%;
+    border-radius: 16px;
+}
+
+/* People choose section */
+.people_chooce {
+    padding: 80px 0;
+    background: #F9F9F9;
+}
+
+.people_chooce_title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.people_chooce_block {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.people_chooce_item {
+    flex: 1;
+    text-align: center;
+    padding: 32px;
+    background: var(--primary-color);
+    border-radius: 16px;
+}
+
+.people_chooce_item svg {
+    margin-bottom: 24px;
+}
+
+.people_chooce_text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Our procedures section */
+.our_procedures {
+    padding: 80px 0;
+}
+
+.our_procedures h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.our_procedures_block {
+    display: flex;
+    gap: 32px;
+}
+
+.our_procedures_item {
+    flex: 1;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.our_procedures_item img {
+    width: 100%;
+    display: block;
+}
+
+.our_procedures_title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Find us section */
+.find_us {
+    padding: 80px 0;
+    background: #F9F9F9;
+}
+
+.find_us_title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.find_us_block {
+    display: flex;
+    gap: 48px;
+    align-items: stretch;
+}
+
+.find_us_item {
+    flex: 1;
+}
+
+.find_us_item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.find_us_form {
+    flex: 1;
+    background: var(--primary-color);
+    padding: 48px;
+    border-radius: 16px;
+}
+
+.find_us_form h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+}
+
+.find_us_form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--secondary-color2);
+}
+
+.find_us_form input {
+    width: 100%;
+    padding: 16px 32px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 32px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.find_us_form input:focus {
+    border-color: var(--primary-color1);
+}
+
+.find_us_form button {
+    width: 100%;
+    background: var(--primary-color1);
+    color: var(--primary-color);
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 16px;
+    min-height: 53px;
+}
+
+.find_us_form button:hover {
+    background: var(--primary-color2);
+}
+
+.find_us_form small {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: var(--secondary-color4);
+}
+
+.find_us_form small a {
+    color: var(--primary-color1);
 }
