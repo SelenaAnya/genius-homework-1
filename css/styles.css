@@ -1,0 +1,20 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #ffffff;
+    --primary-color1: #2B7FFF;
+    --primary-color2: #011C44;
+    --secondary-color: #FFD02B;
+    --secondary-color2: #4A4A4A;
+    --secondary-color3: #4A4A4A;
+    --secondary-color4: #747272;
+    --secondary-color5: #011F4A;
+    --text-color: #333;
+    --background: #ffffff;
+    --accent: rgba(255, 100, 50, 0.8);
+}
